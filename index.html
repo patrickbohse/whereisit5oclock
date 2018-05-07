@@ -6,27 +6,20 @@
     <link rel="icon" href="img/favicon.ico">
     <title>Where is it 5 O'clock?</title>
     <link rel=stylesheet type=text/css href="css/style.css">
-    <link href="../dist/jqvmap.css" media="screen" rel="stylesheet" type="text/css">
-
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="../dist/jquery.vmap.js"></script>
-    <script type="text/javascript" src="../dist/maps/jquery.vmap.world.js" charset="utf-8"></script>
-
-    <script type="text/javascript">
-    jQuery(document).ready(function() {
-      jQuery('#vmap').vectorMap({ map: 'world_en' });
-    });
-    </script>
+    <link href="map/jquery-jvectormap-2.0.3.css" media="screen" rel="stylesheet" type="text/css">
   </head>
   <body>
     <h1>Where is it 5 O'clock right now?</h1>
     <div id="time"></div>
-    <div id="vmap"></div></div>
+    <div id="map"></div>
+
     <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
-    <script src="timezones.js"></script>
-    <script src="scripts.js"></script>
+    <script src="map/jquery-jvectormap-2.0.3.js"></script>
+    <script src="map/jquery-jvectormap-world-mill.js"></script>
+    <script type="text/javascript" src="timezones.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
   </body>
 </html>
