@@ -1,3 +1,5 @@
+//Created by Patrick Bohse
+// timezones are split up to account for DST
 //timezones for april to october
 var timezones = {};
 var time = new Date();
