@@ -1,3 +1,4 @@
+//TIMEZONE CODE
 $('document').ready(function(){
     var time = new Date();
     var year = time.getUTCFullYear();
@@ -20,34 +21,32 @@ $('document').ready(function(){
     if (timezone >= 12){
         timezone = timezone - 24;
     }
+    // gets a single place where it is 5pm
     var randPlace = timezones[timezone][Math.floor(Math.random() * timezones[timezone].length)];
-    //year + "-" + month + "-" + date + " " + dispDour + ":" + minutes + ":" + seconds+"\tCurrent time zone where its 5pm: " + timezone
     $('#time').text(randPlace)
 });
 
-// jQuery('#vmap').vectorMap(
-// {
-//     map: 'world_en',
-//     backgroundColor: '#a5bfdd',
-//     borderColor: '#818181',
-//     borderOpacity: 0.25,
-//     borderWidth: 1,
-//     color: '#f4f3f0',
-//     enableZoom: true,
-//     hoverColor: '#c9dfaf',
-//     hoverOpacity: null,
-//     normalizeFunction: 'linear',
-//     scaleColors: ['#b6d6ff', '#005ace'],
-//     selectedColor: '#c9dfaf',
-//     selectedRegions: null,
-//     showTooltip: true,
-//     onRegionClick: function(element, code, region)
-//     {
-//         var message = 'You clicked "'
-//             + region
-//             + '" which has the code: '
-//             + code.toUpperCase();
+// MAP CODE
 
-//         alert(message);
-//     }
-// });
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+$('#map').vectorMap({
+    map: 'world_mill',
+    backgroundColor: '#FFFFFF',
+    regionStyle: {
+        initial: {
+            fill: '#b1b1b1'
+        }
+    },
+    zoomButtons : false,
+});
+
+sleep(200).then(() => {
+    $('#map').vectorMap('get','mapObject').setFocus({
+        region: 'AU',
+        animate: true
+    });
+})
+
