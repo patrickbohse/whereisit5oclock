@@ -1,472 +1,413 @@
 //Created by Patrick Bohse
-// timezones are split up to account for DST
+//timezones are split up to account for DST
 //timezones for april to october
-var timezones = {};
 var time = new Date();
-if(time.getUTCMonth()>=3 && time.getUTCMonth()<=9){
-  timezones = {
-    "-12": [
-      "Baker Island",
-      "Howland Island",
-      "Fiji",
-      "Kiribati",
-      "Marshall Islands",
-      "Nauru",
-      "New Zealand",
-      "Tuvalu",
-      "Wake Island"
-    ],
-    "-11": [
-      "American Samoa",
-      "Kiribati",
-      "Samoa",
-      "Tonga"
-    ],
-    "-10": [
-      "Hawaii",
-      "Kirimati"
-    ],
-    "-9": [
-      "Gambier Islands"
-    ],
-    "-8": [
-      "Alaska"
-    ],
-    "-7": [
-      "British Columbia",
-      "Yukon",
-      "Los Angeles"
-    ],
-    "-6": [
-      "Alberta",
-      "Colorado",
-      "Belize",
-      "Costa Rica",
-      "Ecuador",
-      "Galapagos Islands",
-      "El Salvador",
-      "Guatemala",
-      "Honduras",
-      "Nicaragua"
-    ],
-    "-5": [
-      "Ontario",
-      "Mexico",
-      "Chicago",
-      "Colombia",
-      "Jamaica",
-      "Panama",
-      "Peru",
-      "Cayman Islands"
-    ],
-    "-4": [
-      "Quebec",
-      "Cuba",
-      "Haiti",
-      "Turks and Caicos Islands",
-      "New York",
-      "Antigua and Barbuda",
-      "Barbados",
-      "Bolivia",
-      "Dominican Republic",
-      "Aruba",
-      "Paraguay",
-      "Trinidad and Tobago",
-      "Anguilla",
-      "Puerto Rico"
-    ],
-    "-3": [
-      "Nova Scotia",
-      "Chile",
-      "Greenland",
-      "Bermuda",
-      "Argentina",
-      "Brazil"
-    ],
-    "-2": [
-      "South Georgia and the South Sandwich Islands"
-    ],
-    "-1": [
-      "Cabo Verde"
-    ],
-    "0": [
-      "Gambia",
-      "Ghana",
-      "Sierra Leone",
-      "Togo"
-    ],
-    "1": [
-      "Ireland",
-      "Morocco",
-      "United Kingdom",
-      "Algeria",
-      "Angola",
-      "Cameroon",
-      "Chad",
-      "Democratic Republic of the Congo",
-      "Gabon",
-      "Niger",
-      "Nigeria",
-      "Tunisia"
-    ],
-    "2": [
-      "Albania",
-      "Austria",
-      "Belgium",
-      "Bosnia and Herzegovina",
-      "Croatia",
-      "Czech Republic",
-      "Denmark",
-      "France",
-      "Germany",
-      "Hungary",
-      "Italy",
-      "Liechtenstein",
-      "Luxembourg",
-      "Macedonia",
-      "Malta",
-      "Monaco",
-      "Montenegro",
-      "Namibia",
-      "Netherlands",
-      "Norway",
-      "Poland",
-      "San Marino",
-      "Serbia",
-      "Slovakia",
-      "Slovenia",
-      "Spain",
-      "Sweden",
-      "Switzerland",
-      "Gibraltar",
-      "Vatican City",
-      "Botswana",
-      "Burundi",
-      "Egypt",
-      "Libya",
-      "Malawi",
-      "Mozambique",
-      "Rwanda",
-      "South Africa",
-      "Zambia",
-      "Zimbabwe",
-      "Sudan"
-    ],
-    "3": [
-      "Bulgaria",
-      "Cyprus",
-      "Estonia",
-      "Finland",
-      "Greece",
-      "Israel",
-      "Jordan",
-      "Latvia",
-      "Lebanon",
-      "Lithuania",
-      "Palestine",
-      "Romania",
-      "Syria",
-      "Turkey",
-      "Ukraine",
-      "Bahrain",
-      "Belarus",
-      "Djibouti",
-      "Ethiopia",
-      "Iraq",
-      "Kenya",
-      "Kuwait",
-      "Madagascar",
-      "Qatar",
-      "Saudi Arabia",
-      "Somalia",
-      "Tanzania",
-      "Uganda",
-      "Yemen",
-      "Moscow"
-    ],
-    "4": [
-      "Armenia",
-      "Georgia",
-      "Oman",
-      "United Arab Emirates"
-    ],
-    "5": [
-      "Kazakhstan",
-      "Maldives",
-      "Pakistan",
-      "Uzbekistan"
-    ],
-    "6": [
-      "Bangladesh",
-      "Kazakhstan"
-    ],
-    "7": [
-      "Cambodia",
-      "Indonesia",
-      "Laos",
-      "Mongolia",
-      "Thailand",
-      "Vietnam"
-    ],
-    "8": [
-      "China",
-      "Indonesia",
-      "Malaysia",
-      "Mongolia",
-      "Philippines",
-      "Singapore",
-      "Taiwan"
-    ],
-    "9": [
-      "Indonesia",
-      "Japan",
-      "North Korea",
-      "South Korea"
-    ],
-    "10": [
-      "Sydney",
-      "Tasmania",
-      "Papua New Guinea",
-      "Guam"
-    ],
-    "11": [
-      "Papa New Guinea",
-      "Solomon Islands",
-      "Vanuatu"
-    ]
+if(time.getUTCMonth>= 3 && time.getUTCMonth<=9){
+	var timezones = {
+		"-12": [
+			"Fiji;FJ",
+			"New Zealand;NZ",
+			"Tuvalu;TV"
+		],
+		"-11": [
+			"American Samoa,AS",
+			"Samoa;SM",
+			"Tonga;TO"
+		],
+		"-10": [
+			"Hawaii, USA;US"
+		],
+		"-9": [
+			"Gambier Islands;GI"
+		],
+		"-8": [
+			"Alaska, USA;US"
+		],
+		"-7": [
+			"Vancouver, Canada;CA",
+			"Los Angeles, USA;US"
+		],
+		"-6": [
+			"Colorado, USA;US",
+			"Belize;BZ",
+			"Costa Rica;CR",
+			"Ecuador;EC",
+			"El Salvador;SV",
+			"Guatemala;GT",
+			"Honduras;HN",
+			"Nicaragua;NI"
+		],
+		"-5": [
+			"Ontario, Canada;CA",
+			"Mexico;MX",
+			"Chicago, USA;US",
+			"Colombia;CO",
+			"Jamaica;JM",
+			"Panama;PA",
+			"Peru;PE"
+		],
+		"-4": [
+			"Quebec, Canada;CA",
+			"Cuba;CU",
+			"Haiti;HT",
+			"New York, USA;US",
+			"Bolivia;BO",
+			"Dominican Republic;DO",
+			"Paraguay;PY",
+			"Trinidad and Tobago;TT",
+			"Puerto Rico;PR"
+		],
+		"-3": [
+			"Nova Scotia, Canada;CA",
+			"Chile;CL",
+			"Greenland;GL",
+			"Argentina;AR",
+			"Brazil;BR"
+		],
+		"-2": [
+			"Brazil;BR"
+		],
+		"-1": [
+			"Cabo Verde;CV"
+		],
+		"0": [
+			"Gambia;GM",
+			"Ghana;GH",
+			"Sierra Leone;SL",
+			"Togo;TG"
+		],
+		"1": [
+			"Ireland;IE",
+			"Morocco;MA",
+			"United Kingdom;GB",
+			"Algeria;DZ",
+			"Angola;AO",
+			"Cameroon;CM",
+			"Chad;TD",
+			"Democratic Republic of the Congo;CD",
+			"Gabon;GA",
+			"Niger;NE",
+			"Nigeria;NG",
+			"Tunisia;TN"
+		],
+		"2": [
+			"Albania;AL",
+			"Austria;AT",
+			"Belgium;BE",
+			"Bosnia and Herzegovina;BA",
+			"Croatia;HR",
+			"Czech Republic;CZ",
+			"Denmark, DK",
+			"France;FR",
+			"Germany;DE",
+			"Hungary;HU",
+			"Italy;IT",
+			"Luxembourg;LU",
+			"Macedonia;MK",
+			"Montenegro;ME",
+			"Namibia;NA",
+			"Netherlands;NL",
+			"Norway;NO",
+			"Poland;PL",
+			"Serbia;RS",
+			"Slovakia;SK",
+			"Slovenia;SI",
+			"Spain;ES",
+			"Sweden;SE",
+			"Switzerland;CH",
+			"Botswana;BW",
+			"Burundi;BI",
+			"Egypt;EG",
+			"Libya;LY",
+			"Malawi;MW",
+			"Rwanda;RW",
+			"South Africa;ZA",
+			"Zambia;ZM",
+			"Zimbabwe;ZW",
+			"Sudan;SD"
+		],
+		"3": [
+			"Bulgaria;BG",
+			"Cyprus;CY",
+			"Estonia;EE",
+			"Finland;FI",
+			"Greece;GR",
+			"Israel;IL",
+			"Jordan;JO",
+			"Latvia;LV",
+			"Lebanon;LB",
+			"Lithuania;LT",
+			"Palestine;PS",
+			"Romania;RO",
+			"Syria;SY",
+			"Turkey;TR",
+			"Ukraine;UA",
+			"Belarus;BY",
+			"Djibouti;DJ",
+			"Ethiopia;ET",
+			"Iraq;IQ",
+			"Kenya;KE",
+			"Kuwait;KW",
+			"Madagascar;MG",
+			"Qatar;QA",
+			"Saudi Arabia;SA",
+			"Somalia;SO",
+			"Tanzania;TZ",
+			"Uganda;UG",
+			"Yemen;YE",
+			"Moscow, Russia;RU"
+		],
+		"4": [
+			"Armenia;AM",
+			"Georgia;GE",
+			"Oman;OM",
+			"United Arab Emirates;AE"
+		],
+		"5": [
+			"Kazakhstan;KZ",
+			"Pakistan;PK",
+			"Uzbekistan;UZ"
+		],
+		"6": [
+			"Bangladesh;BD",
+			"Kazakhstan;KZ"
+		],
+		"7": [
+			"Cambodia;KH",
+			"Indonesia;ID",
+			"Mongolia;MN",
+			"Thailand;TH",
+			"Vietnam;VN"
+		],
+		"8": [
+			"China;CN",
+			"Indonesia;ID",
+			"Malaysia;MY",
+			"Mongolia;MN",
+			"Philippines;PH",
+			"Taiwan;TW"
+		],
+		"9": [
+			"Indonesia;ID",
+			"Japan;JP",
+			"North Korea;KP",
+			"South Korea;KR"
+		],
+		"10": [
+			"Sydney, Austrailia;AU",
+			"Tasmania, Austrailia;AU",
+			"Papua New Guinea;PG",
+			"Guam"
+		],
+		"11": [
+			"Papa New Guinea;PG",
+			"Solomon Islands;SB",
+			"Vanuatu; VU"
+		]
   }
 }
 //timezones for november to march
-else{  
-  timezones = {
-    "-12": [
-      "Baker Island",
-      "Howland Island",
-      "Fiji",
-      "Kiribati",
-      "Marshall Islands",
-      "Nauru",
-      "New Zealand",
-      "Tuvalu",
-      "Wake Island"
-    ],
-    "-11": [
-      "American Samoa",
-      "Kiribati",
-      "Samoa",
-      "Tonga"
-    ],
-    "-10": [
-      "Hawaii",
-      "Kirimati"
-    ],
-    "-9": [
-      "Alaska",
-      "Gambier Islands"
-    ],
-    "-8": [
-      "British Columbia",
-      "Yukon",
-      "Los Angeles"
-    ],
-    "-7": [
-      "Alberta",
-      "Colorado"
-    ],
-    "-6": [
-      "Belize",
-      "Ontario",
-      "Costa Rica",
-      "Ecuador",
-      "Galapagos Islands",
-      "El Salvador",
-      "Guatemala",
-      "Honduras",
-      "Mexico",
-      "Nicaragua",
-      "Chicago"
-    ],
-    "-5": [
-      "Quebec",
-      "Colombia",
-      "Cuba",
-      "Haiti",
-      "Jamaica",
-      "Panama",
-      "Peru",
-      "Cayman Islands",
-      "Turks and Caicos Islands",
-      "New York"
-    ],
-    "-4": [
-      "Antigua and Barbuda",
-      "Barbados",
-      "Bolivia",
-      "Nova Scotia",
-      "Chile",
-      "Greenland",
-      "Dominican Republic",
-      "Aruba",
-      "Trinidad and Tobago",
-      "Anguilla",
-      "Bermuda",
-      "Puerto Rico"
-    ],
-    "-3": [
-      "Paraguay",
-      "Argentina"
-    ],
-    "-2": [
-      "Brazil",
-      "South Georgia and the South Sandwich Islands"
-    ],
-    "-1": [
-      "Cabo Verde"
-    ],
-    "0": [
-      "Gambia",
-      "Ghana",
-      "Ireland",
-      "Morocco",
-      "Sierra Leone",
-      "Togo",
-      "United Kingdom"
-    ],
-    "1": [
-      "Albania",
-      "Algeria",
-      "Angola",
-      "Austria",
-      "Belgium",
-      "Bosnia and Herzegovina",
-      "Cameroon",
-      "Chad",
-      "Democratic Republic of the Congo",
-      "Croatia",
-      "Czech Republic",
-      "Denmark",
-      "France",
-      "Gabon",
-      "Germany",
-      "Hungary",
-      "Italy",
-      "Liechtenstein",
-      "Luxembourg",
-      "Macedonia",
-      "Malta",
-      "Monaco",
-      "Montenegro",
-      "Netherlands",
-      "Niger",
-      "Nigeria",
-      "Norway",
-      "Poland",
-      "San Marino",
-      "Serbia",
-      "Slovakia",
-      "Slovenia",
-      "Spain",
-      "Sweden",
-      "Switzerland",
-      "Tunisia",
-      "Gibraltar",
-      "Vatican City"
-    ],
-    "2": [
-      "Namibia",
-      "Botswana",
-      "Bulgaria",
-      "Burundi",
-      "Cyprus",
-      "Egypt",
-      "Estonia",
-      "Finland",
-      "Greece",
-      "Israel",
-      "Jordan",
-      "Latvia",
-      "Lebanon",
-      "Lithuania",
-      "Libya",
-      "Malawi",
-      "Mozambique",
-      "Palestine",
-      "Romania",
-      "Rwanda",
-      "South Africa",
-      "Syria",
-      "Ukraine",
-      "Zambia",
-      "Zimbabwe",
-      "Sudan"
-    ],
-    "3": [
-      "Turkey",
-      "Bahrain",
-      "Belarus",
-      "Djibouti",
-      "Ethiopia",
-      "Iraq",
-      "Kenya",
-      "Kuwait",
-      "Madagascar",
-      "Qatar",
-      "Saudi Arabia",
-      "Somalia",
-      "Tanzania",
-      "Uganda",
-      "Yemen",
-      "Moscow"
-    ],
-    "4": [
-      "Armenia",
-      "Georgia",
-      "Oman",
-      "United Arab Emirates"
-    ],
-    "5": [
-      "Kazakhstan",
-      "Maldives",
-      "Pakistan",
-      "Uzbekistan"
-    ],
-    "6": [
-      "Bangladesh",
-      "Kazakhstan"
-    ],
-    "7": [
-      "Cambodia",
-      "Indonesia",
-      "Laos",
-      "Mongolia",
-      "Thailand",
-      "Vietnam"
-    ],
-    "8": [
-      "China",
-      "Indonesia",
-      "Malaysia",
-      "Mongolia",
-      "Philippines",
-      "Singapore",
-      "Taiwan"
-    ],
-    "9": [
-      "Indonesia",
-      "Japan",
-      "North Korea",
-      "South Korea"
-    ],
-    "10": [
-      "Guam"
-    ],
-    "11": [
-      "Sydney",
-      "Tasmania",
-      "Papua New Guinea",
-      "Papa New Guinea",
-      "Solomon Islands",
-      "Vanuatu"
-    ]
-  }
+else{
+	var timezones = {
+		"-12": [
+			"Tuvalu;TV"
+		],
+		"-11": [
+			"Fiji;FJ",
+			"New Zealand;NZ",
+			"American Samoa,AS",
+			"Tonga;TO"
+		],
+		"-10": [
+			"Samoa;SM",
+			"Hawaii, USA;US"
+		],
+		"-9": [
+			"Alaska, USA;US",
+			"Gambier Islands;GI"
+		],
+		"-8": [
+			"Vancouver, Canada;CA",
+			"Los Angeles, USA;US"
+		],
+		"-7": [
+			"Colorado, USA;US"
+		],
+		"-6": [
+			"Belize;BZ",
+			"Ontario, Canada;CA",
+			"Costa Rica;CR",
+			"Ecuador;EC",
+			"El Salvador;SV",
+			"Guatemala;GT",
+			"Honduras;HN",
+			"Mexico;MX",
+			"Nicaragua;NI",
+			"Chicago, USA;US"
+		],
+		"-5": [
+			"Quebec, Canada;CA",
+			"Colombia;CO",
+			"Cuba;CU",
+			"Haiti;HT",
+			"Jamaica;JM",
+			"Panama;PA",
+			"Peru;PE",
+			"New York, USA;US"
+		],
+		"-4": [
+			"Bolivia;BO",
+			"Nova Scotia, Canada;CA",
+			"Chile;CL",
+			"Greenland;GL",
+			"Dominican Republic;DO",
+			"Trinidad and Tobago;TT",
+			"Puerto Rico;PR"
+		],
+		"-3": [
+			"Paraguay;PY",
+			"Argentina;AR",
+			"Brazil;BR"
+		],
+		"-2": [
+			"Brazil;BR"
+		],
+		"-1": [
+			"Cabo Verde;CV"
+		],
+		"0": [
+			"Gambia;GM",
+			"Ghana;GH",
+			"Ireland;IE",
+			"Morocco;MA",
+			"Sierra Leone;SL",
+			"Togo;TG",
+			"United Kingdom;GB"
+		],
+		"1": [
+			"Albania;AL",
+			"Algeria;DZ",
+			"Angola;AO",
+			"Austria;AT",
+			"Belgium;BE",
+			"Bosnia and Herzegovina;BA",
+			"Cameroon;CM",
+			"Chad;TD",
+			"Democratic Republic of the Congo;CD",
+			"Croatia;HR",
+			"Czech Republic;CZ",
+			"Denmark, DK",
+			"France;FR",
+			"Gabon;GA",
+			"Germany;DE",
+			"Hungary;HU",
+			"Italy;IT",
+			"Luxembourg;LU",
+			"Macedonia;MK",
+			"Montenegro;ME",
+			"Netherlands;NL",
+			"Niger;NE",
+			"Nigeria;NG",
+			"Norway;NO",
+			"Poland;PL",
+			"Serbia;RS",
+			"Slovakia;SK",
+			"Slovenia;SI",
+			"Spain;ES",
+			"Sweden;SE",
+			"Switzerland;CH",
+			"Tunisia;TN"
+		],
+		"2": [
+			"Namibia;NA",
+			"Botswana;BW",
+			"Bulgaria;BG",
+			"Burundi;BI",
+			"Cyprus;CY",
+			"Egypt;EG",
+			"Estonia;EE",
+			"Finland;FI",
+			"Greece;GR",
+			"Israel;IL",
+			"Jordan;JO",
+			"Latvia;LV",
+			"Lebanon;LB",
+			"Lithuania;LT",
+			"Libya;LY",
+			"Malawi;MW",
+			"Palestine;PS",
+			"Romania;RO",
+			"Rwanda;RW",
+			"South Africa;ZA",
+			"Syria;SY",
+			"Ukraine;UA",
+			"Zambia;ZM",
+			"Zimbabwe;ZW",
+			"Sudan;SD"
+		],
+		"3": [
+			"Turkey;TR",
+			"Belarus;BY",
+			"Djibouti;DJ",
+			"Ethiopia;ET",
+			"Iraq;IQ",
+			"Kenya;KE",
+			"Kuwait;KW",
+			"Madagascar;MG",
+			"Qatar;QA",
+			"Saudi Arabia;SA",
+			"Somalia;SO",
+			"Tanzania;TZ",
+			"Uganda;UG",
+			"Yemen;YE",
+			"Moscow, Russia;RU"
+		],
+		"4": [
+			"Armenia;AM",
+			"Georgia;GE",
+			"Oman;OM",
+			"United Arab Emirates;AE"
+		],
+		"5": [
+			"Kazakhstan;KZ",
+			"Pakistan;PK",
+			"Uzbekistan;UZ"
+		],
+		"6": [
+			"Bangladesh;BD",
+			"Kazakhstan;KZ"
+		],
+		"7": [
+			"Cambodia;KH",
+			"Indonesia;ID",
+			"Mongolia;MN",
+			"Thailand;TH",
+			"Vietnam;VN"
+		],
+		"8": [
+			"China;CN",
+			"Indonesia;ID",
+			"Malaysia;MY",
+			"Mongolia;MN",
+			"Philippines;PH",
+			"Taiwan;TW"
+		],
+		"9": [
+			"Indonesia;ID",
+			"Japan;JP",
+			"North Korea;KP",
+			"South Korea;KR"
+		],
+		"10": [
+			"Guam"
+		],
+		"11": [
+			"Sydney, Austrailia;AU",
+			"Tasmania, Austrailia;AU",
+			"Papua New Guinea;PG",
+			"Papa New Guinea;PG",
+			"Solomon Islands;SB",
+			"Vanuatu; VU"
+		]
+	}
 }
